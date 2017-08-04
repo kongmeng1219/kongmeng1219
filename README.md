@@ -1,2 +1,3 @@
-# kongmeng1219
-km'home
+react native学习 
+
+从基础学起。。。
