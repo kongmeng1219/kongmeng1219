@@ -1,0 +1,26 @@
+    appregistry可以算是react native的第一个API了
+
+    appregistry是 react native中的一个组件 用以组件的注册，同时它是js运行react native的入口，自定义的组件需要用Appregistry.registerComponent()
+方法注册自己才能被
+
+    下面是一个简单的hello world
+
+import React,{Component} from 'react';//react允许将代码封装成组件，然后将组件插入页面，在这里引入父类组件
+import {
+  Appregistry,
+  Text,
+} from 'react native';//react native提供了一系列的组件 这里引入两个组件  Appregistry用以组件注册，Text用以显示文本
+
+export default class HelloWorld extends Component {//react native定义组件，继承Component
+    render(){//实现一个Component的子类，必须定义render()方法，里面放入要展示的东西
+       return(
+          <Text>
+              Hello world!
+          </Text>//和HTML差不多的样子
+       );
+    }
+}
+
+AppRegistry.registerComponent('HelloWorld', () => HelloWorld);//注册，并执行
+
+自己也是初学者，没有系统学过react，没有办法深层次理解，之后会对这些更新。
