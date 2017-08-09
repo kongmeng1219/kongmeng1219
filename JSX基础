@@ -1,0 +1,68 @@
+react 由react.js和react native组成，react.js是Facebook开源的前端框架，react native是reactJS在native上的思想体现
+
+JSX 是在JavaScript中写入HTML最后每个HTML标签转化成JavaScript语言运行
+
+reactJS运行环境  核心文件 react.js react-dom.js 
+
+                 解析器  browser.min.js
+
+标签： HTML标签  reactJS自定义组件标签（首字母大写区分HTML标签）
+
+转换方式：  
+
+	<h1>转换</h1> ---> React.createElement("h1",null,"转换")
+
+	参数：标签，属性，子元素（转换是个文本节点）
+
+执行表达式 ：
+
+		var msg="转换";
+		<h1>{msg}</h1>
+	相当于：React.createElement("h1",null,msg)
+
+属性：   var <h1 width = "10px">转换</h1> 
+	 React.createElement("h1",{},转换)
+
+延展属性: 
+
+	var props = {}
+	props.a="1";
+ 	props.b="2";
+	<h1 {...props} b="2">转换</h1>
+
+	React.createElement("h1",React.__spread((),props,{b:"2"}),"转换")
+
+自定义属性：
+
+	H5中的自定义属性：data-，可以渲染到页面
+
+显示HTML代码：
+
+	_html属性：<div>{_html:'<h1>转换</h1>'}</div>
+
+样式：
+
+
+	style属性  将样式封装成js对象 style={{color:'red'}}
+	内部{}是对象
+	外部{}是JSX语法
+
+事件绑定：
+
+	<div id="demo"></div>
+ 	<script type = 'text/babel'>
+		function demoClick(){}
+	</script>
+	var test=<button onClick={demoClick.bind(this)}></button>
+	
+	React.render(test,document.getElementById('demo'));
+
+bind()方法会设定作用域。
+
+
+        
+
+
+
+
+
